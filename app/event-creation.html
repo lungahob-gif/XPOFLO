@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create a new ExpoFlow exhibition project." />
+  <title>Create Event — ExpoFlow</title>
+  <link rel="stylesheet" href="event-creation.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a class="brand" href="../index.html" aria-label="ExpoFlow home">
+        <span class="brand-mark">E</span>
+        <span>ExpoFlow</span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <div class="workspace-card">
+        <div class="workspace-avatar">B</div>
+        <div>
+          <strong>My Events</strong>
+          <span>Planning workspace</span>
+        </div>
+        <span class="chevron">⌄</span>
+      </div>
+
+      <nav class="side-nav" aria-label="Application navigation">
+        <a class="nav-item active" href="event-creation.html"><span class="nav-icon">＋</span> New event</a>
+        <a class="nav-item muted" href="#"><span class="nav-icon">▦</span> Events</a>
+        <a class="nav-item muted" href="#"><span class="nav-icon">◫</span> Venues</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a class="support-link" href="../index.html#demo"><span>?</span> Need help?</a>
+        <a class="back-home" href="../index.html">← Back to ExpoFlow</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb"><a href="../index.html">ExpoFlow</a><span>/</span><strong>New event</strong></div>
+        <div class="topbar-actions"><span class="autosave">Drafts save automatically</span></div>
+      </header>
+
+      <div class="page-shell">
+        <section class="page-intro">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> EVENT SETUP</div>
+            <h1>Create a new event.</h1>
+            <p>Start with the basics. You can add detailed venue rules, booth layouts and exhibitors once the event is created.</p>
+          </div>
+          <div class="step-progress" aria-label="Event creation progress">
+            <div class="progress-label"><span>Step 1 of 3</span><strong>Event basics</strong></div>
+            <div class="progress-track"><span></span></div>
+            <div class="progress-label muted"><span>Next</span><strong>Venue setup</strong></div>
+          </div>
+        </section>
+
+        <section class="creation-grid">
+          <div class="form-column">
+            <form id="eventForm" novalidate>
+              <section class="form-card">
+                <div class="card-heading">
+                  <div class="card-number">01</div>
+                  <div><h2>Event information</h2><p>What are you organizing?</p></div>
+                </div>
+
+                <div class="field-group">
+                  <label for="eventName">Event name <span>*</span></label>
+                  <input id="eventName" name="eventName" type="text" placeholder="e.g. The Bamboo Expo 2026" autocomplete="off" required />
+                </div>
+
+                <div class="two-col">
+                  <div class="field-group">
+                    <label for="eventType">Event type <span>*</span></label>
+                    <select id="eventType" name="eventType" required>
+                      <option value="" selected disabled>Select type</option>
+                      <option>Exhibition</option>
+                      <option>Trade Show</option>
+                      <option>Expo</option>
+                      <option>Conference</option>
+                      <option>Fair</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="field-group">
+                    <label for="eventStatus">Planning status</label>
+                    <select id="eventStatus" name="eventStatus">
+                      <option selected>Planning</option>
+                      <option>Confirmed</option>
+                      <option>Draft</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field-group">
+                  <label for="description">Description <span class="optional">Optional</span></label>
+                  <textarea id="description" name="description" rows="3" placeholder="A short description of the event and what it is about."></textarea>
+                </div>
+              </section>
+
+              <section class="form-card">
+                <div class="card-heading">
+                  <div class="card-number">02</div>
+                  <div><h2>Date & location</h2><p>Where and when is it happening?</p></div>
+                </div>
+
+                <div class="two-col">
+                  <div class="field-group">
+                    <label for="startDate">Start date <span>*</span></label>
+                    <input id="startDate" name="startDate" type="date" required />
+                  </div>
+                  <div class="field-group">
+                    <label for="endDate">End date <span>*</span></label>
+                    <input id="endDate" name="endDate" type="date" required />
+                  </div>
+                </div>
+
+                <div class="field-group">
+                  <label for="venueName">Venue name <span>*</span></label>
+                  <input id="venueName" name="venueName" type="text" placeholder="e.g. Meru University of Science and Technology" required />
+                </div>
+
+                <div class="two-col">
+                  <div class="field-group">
+                    <label for="city">City <span>*</span></label>
+                    <input id="city" name="city" type="text" placeholder="e.g. Meru" required />
+                  </div>
+                  <div class="field-group">
+                    <label for="country">Country <span>*</span></label>
+                    <input id="country" name="country" type="text" value="Kenya" required />
+                  </div>
+                </div>
+              </section>
+
+              <section class="form-card">
+                <div class="card-heading">
+                  <div class="card-number">03</div>
+                  <div><h2>Venue dimensions</h2><p>Give ExpoFlow the basic footprint.</p></div>
+                </div>
+
+                <div class="dimension-grid">
+                  <div class="field-group">
+                    <label for="length">Venue length <span>*</span></label>
+                    <div class="input-with-unit"><input id="length" name="length" type="number" min="0" step="0.1" placeholder="71" required /><span>m</span></div>
+                  </div>
+                  <div class="field-group">
+                    <label for="width">Venue width <span>*</span></label>
+                    <div class="input-with-unit"><input id="width" name="width" type="number" min="0" step="0.1" placeholder="35" required /><span>m</span></div>
+                  </div>
+                  <div class="field-group">
+                    <label for="expectedExhibitors">Expected exhibitors</label>
+                    <div class="input-with-unit"><input id="expectedExhibitors" name="expectedExhibitors" type="number" min="0" step="1" placeholder="150" /><span>people</span></div>
+                  </div>
+                </div>
+
+                <div class="area-preview">
+                  <div class="area-icon">▧</div>
+                  <div>
+                    <span>Gross floor area</span>
+                    <strong id="grossArea">—</strong>
+                  </div>
+                  <div class="area-note">Calculated automatically from length × width.</div>
+                </div>
+              </section>
+
+              <div class="form-actions">
+                <a class="secondary-action" href="../index.html">Cancel</a>
+                <button class="button-primary" type="submit">Create event <span>→</span></button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="preview-column">
+            <div class="preview-card sticky-card">
+              <div class="preview-header">
+                <div><span class="mini-label">EVENT PREVIEW</span><h3 id="previewName">Your event</h3></div>
+                <span class="draft-badge">Draft</span>
+              </div>
+
+              <div class="venue-visual">
+                <div class="venue-ratio"><span id="ratioWidth">—</span><i></i><span id="ratioLength">—</span></div>
+                <div class="venue-room" id="venueRoom"><span>VENUE</span><strong id="previewVenue">Add venue dimensions</strong></div>
+                <div class="door-marker left"></div><div class="door-marker right"></div>
+              </div>
+
+              <div class="preview-stats">
+                <div><span>Floor area</span><strong id="previewArea">—</strong></div>
+                <div><span>Event type</span><strong id="previewType">—</strong></div>
+                <div><span>Exhibitors</span><strong id="previewExhibitors">—</strong></div>
+              </div>
+
+              <div class="preview-callout">
+                <span class="callout-icon">i</span>
+                <p>After creation, ExpoFlow will take you to <strong>Venue Setup</strong> where you can define aisles, entrances, stages and other fixed areas.</p>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="event-creation.js"></script>
+</body>
+</html>
